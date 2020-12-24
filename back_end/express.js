@@ -43,6 +43,8 @@ app.use(express.static('data', {
 
 // for https
 // https://stackoverflow.com/questions/11744975/enabling-https-on-express-js
+// iOS needs a special certificate
+// https://stackoverflow.com/questions/58011737/ios-13-tls-issue
 
 // the self-signed certificates were created using the linux command openssl
 // https://wiki.debian.org/Self-Signed_Certificate
@@ -60,8 +62,8 @@ if (typeof process.env.USE_HTTPS !== 'undefined') {
 } else {
   var http = require('http');
   var https = require('https');
-  var privateKey  = fs.readFileSync('sslcert/local.key', 'utf8');
-  var certificate = fs.readFileSync('sslcert/local.pem', 'utf8');
+  var privateKey  = fs.readFileSync('sslcert/key.pem', 'utf8');
+  var certificate = fs.readFileSync('sslcert/certificate.crt', 'utf8');
 
   var credentials = { key: privateKey, cert: certificate };
 
