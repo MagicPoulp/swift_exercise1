@@ -10,7 +10,7 @@
         <!--Podcasts-->
         <scene sceneID="9ba-Xf-NLy">
             <objects>
-                <viewController id="pvO-e8-LHs" sceneMemberID="viewController">
+                <viewController id="pvO-e8-LHs" customClass="PodcastsViewController" customModule="swift_exercise1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Syo-6f-08d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
