@@ -25,9 +25,9 @@
                                 <rect key="frame" x="10" y="74.5" width="394" height="832.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mzJ-UE-U7w">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="900"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="900" identifier="podcastsMainStackViewHeightConstraint" id="x2n-JO-UtQ"/>
+                                            <constraint firstAttribute="height" constant="100" identifier="podcastsMainStackViewHeightConstraint" id="x2n-JO-UtQ"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>

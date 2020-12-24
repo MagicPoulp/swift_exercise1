@@ -8,12 +8,21 @@
 
 import UIKit
 
+//MARK: Types
+struct Podcast: Decodable {
+    let id: Int
+    let title: String
+    let numberOfEpisodes: Int
+    let created: String
+    let description: String
+}
+
 class PodcastsViewController: UIViewController {
 
     //MARK: Properties
     @IBOutlet var podcastsMainStackView: UIStackView!
     
-    var podcastViewHeight: CGFloat = 500
+    var podcastViewHeight: CGFloat = 200
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,22 +38,30 @@ class PodcastsViewController: UIViewController {
         // https://jaanus.com/ios-13-certificates/
         let url = URL(string: "http://localhost:4200/podcasts.json")!
 
+        // a new thread prevent blocking the main thread
         DispatchQueue.global().async {
-            // Fetch Image Data
             if let data = try? Data(contentsOf: url) {
                 // as said in the tutorial UI updates must be run on the main thread
                 DispatchQueue.main.async {
-                    let numPodcasts = 3;
-                    self.podcastsMainStackView.addSubview(self.podcastView())
+                    // decoding taken from here:
+                    // https://programmingwithswift.com/parse-json-from-file-and-url-with-swift/
+                    // use URLSession like in the link above to catch preoperly http errors
+                    //let dataJson = data.data(using: .utf8)!
+                    let dataJson = data
+                    let podcasts: Array<Podcast> = try! JSONDecoder().decode([Podcast].self, from: dataJson)
+                    let numPodcasts = podcasts.count;
+                    for podcast in podcasts {
+                        print(podcast.title)
+                        self.podcastsMainStackView.addSubview(self.podcastView())
+                    }
+                    // https://stackoverflow.com/questions/42669554/how-to-update-the-constant-height-constraint-of-a-uiview-programmatically
                     let calculatedHeight: CGFloat = self.podcastViewHeight * CGFloat(numPodcasts)
-                    https://stackoverflow.com/questions/42669554/how-to-update-the-constant-height-constraint-of-a-uiview-programmatically
                     for constraint in self.podcastsMainStackView.constraints {
                         if constraint.identifier == "podcastsMainStackViewHeightConstraint" {
                            constraint.constant = calculatedHeight
                         }
                     }
                     self.podcastsMainStackView.layoutIfNeeded()
-                    
                 }
             }
         }
