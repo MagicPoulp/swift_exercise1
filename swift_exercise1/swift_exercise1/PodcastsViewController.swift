@@ -23,7 +23,8 @@ class PodcastsViewController: UIViewController {
     @IBOutlet var podcastsMainStackView: UIStackView!
     
     var podcastViewHeight: CGFloat = 100
-    
+    var podcastViewSpacing: CGFloat = 10
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,9 +61,10 @@ class PodcastsViewController: UIViewController {
                     self.podcastsMainStackView.setNeedsDisplay()
                     self.podcastsMainStackView.layoutIfNeeded()
 
+                    var index = 0;
                     for podcast in podcasts {
-                        print(podcast.title)
-                        self.addPodcastView()
+                        self.addPodcastView(index: index)
+                        index += 1
                     }
                     self.podcastsMainStackView.setNeedsDisplay()
                     self.podcastsMainStackView.layoutIfNeeded()
@@ -72,13 +74,13 @@ class PodcastsViewController: UIViewController {
     }
     
     // https://stackoverflow.com/questions/29094129/swift-creating-a-vertical-uiscrollview-programmatically
-    func addPodcastView() {
+    func addPodcastView(index: Int) {
         let view = UIView()
         self.podcastsMainStackView.addSubview(view)
+        // when doing manual setups, it seems we need this line below
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.heightAnchor.constraint(equalToConstant: self.podcastViewHeight).isActive = true
-        //view.widthAnchor.constraint(equalToConstant: 200).isActive = true
         //https://developer.apple.com/documentation/uikit/nslayoutanchor
         // Creating constraints using NSLayoutConstraint
         NSLayoutConstraint(item: view,
@@ -96,14 +98,16 @@ class PodcastsViewController: UIViewController {
                            attribute: .trailingMargin,
                            multiplier: 1.0,
                            constant: 0.0).isActive = true
-        /*
+        
+        // it seems that translatesAutoresizingMaskIntoConstraints = false
+        // removes the automatic behaviour of the StackView
         NSLayoutConstraint(item: view,
                             attribute: .top,
                             relatedBy: .equal,
                             toItem: self.podcastsMainStackView,
-                            attribute: .trailingMargin,
+                            attribute: .topMargin,
                             multiplier: 1.0,
-                            constant: 0.0).isActive = true*/
+                            constant: (self.podcastViewHeight + self.podcastViewSpacing) * CGFloat(index)).isActive = true
     }
 }
 

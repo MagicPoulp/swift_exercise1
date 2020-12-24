@@ -7,6 +7,8 @@ https://github.com/MagicPoulp/display_vulkan_from_kotlin_or_swift
 
 see the back_end folder and the readme to start the server
 
+We do not use the recent library SwiftUI because not all devices can run it.
+
 # doc
     // tutorials for the scrollable view
     // tutorial that gives a deprecated way

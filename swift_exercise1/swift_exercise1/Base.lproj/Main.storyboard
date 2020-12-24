@@ -16,18 +16,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcasts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mi-Rv-PPN">
-                                <rect key="frame" x="171.5" y="44" width="71" height="20.5"/>
+                                <rect key="frame" x="171.5" y="49" width="71" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0G-j2-tdR">
-                                <rect key="frame" x="10" y="74.5" width="394" height="832.5"/>
+                                <rect key="frame" x="10" y="79.5" width="394" height="827.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mzJ-UE-U7w">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="500"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" identifier="podcastsMainStackViewHeightConstraint" id="x2n-JO-UtQ"/>
+                                            <constraint firstAttribute="height" constant="500" identifier="podcastsMainStackViewHeightConstraint" id="x2n-JO-UtQ"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -46,7 +46,7 @@
                         <constraints>
                             <constraint firstItem="KyJ-GM-dxJ" firstAttribute="bottom" secondItem="A0G-j2-tdR" secondAttribute="bottom" constant="10" id="WBb-ZO-YjG"/>
                             <constraint firstItem="A0G-j2-tdR" firstAttribute="leading" secondItem="KyJ-GM-dxJ" secondAttribute="leading" constant="10" id="WfA-UZ-HnJ"/>
-                            <constraint firstItem="0Mi-Rv-PPN" firstAttribute="top" secondItem="KyJ-GM-dxJ" secondAttribute="top" id="Wns-AR-ETx"/>
+                            <constraint firstItem="0Mi-Rv-PPN" firstAttribute="top" secondItem="KyJ-GM-dxJ" secondAttribute="top" constant="5" id="Wns-AR-ETx"/>
                             <constraint firstItem="A0G-j2-tdR" firstAttribute="top" secondItem="0Mi-Rv-PPN" secondAttribute="bottom" constant="10" id="dI7-ax-nbU"/>
                             <constraint firstItem="KyJ-GM-dxJ" firstAttribute="trailing" secondItem="A0G-j2-tdR" secondAttribute="trailing" constant="10" id="mbT-0h-kaI"/>
                             <constraint firstItem="0Mi-Rv-PPN" firstAttribute="centerX" secondItem="Syo-6f-08d" secondAttribute="centerX" id="omd-XC-nbw"/>
@@ -73,7 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIe-pU-0HX">
-                                <rect key="frame" x="184" y="44" width="46" height="21"/>
+                                <rect key="frame" x="184" y="49" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                         <color key="backgroundColor" red="0.66541987660000002" green="0.77868574859999995" blue="0.97631341220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="RIe-pU-0HX" firstAttribute="centerX" secondItem="z9x-Lz-KaT" secondAttribute="centerX" id="PoJ-Ry-dHX"/>
-                            <constraint firstItem="RIe-pU-0HX" firstAttribute="top" secondItem="8gs-5f-L96" secondAttribute="top" id="zBo-hH-ce0"/>
+                            <constraint firstItem="RIe-pU-0HX" firstAttribute="top" secondItem="8gs-5f-L96" secondAttribute="top" constant="5" id="zBo-hH-ce0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8gs-5f-L96"/>
                     </view>
