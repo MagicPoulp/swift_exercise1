@@ -11,7 +11,10 @@ import UIKit
 class PodcastsViewController: UIViewController {
 
     //MARK: Properties
-
+    // tutorial for the scrollable view
+    //https://medium.com/@jessesahli3/laying-out-dynamic-uiscrollviews-in-interface-builder-e4f0645bc2c7
+    @IBOutlet var podcastsListView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
