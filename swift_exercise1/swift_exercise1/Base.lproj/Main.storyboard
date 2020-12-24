@@ -24,36 +24,30 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0G-j2-tdR">
                                 <rect key="frame" x="10" y="74.5" width="394" height="832.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4D-UK-fEc" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="1000"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mzJ-UE-U7w">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="900"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Wn-5E-5lD">
-                                                <rect key="frame" x="176" y="191" width="42" height="20.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hs3-1A-rps">
-                                                        <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qY6-Ku-3sv">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="900"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1000" id="Pem-br-LpA"/>
+                                            <constraint firstAttribute="height" constant="900" id="QuE-gN-B0p"/>
                                         </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="r4D-UK-fEc" secondAttribute="trailing" id="Aao-NC-A6H"/>
-                                    <constraint firstItem="r4D-UK-fEc" firstAttribute="width" secondItem="A0G-j2-tdR" secondAttribute="width" id="WHX-Ko-BXB"/>
-                                    <constraint firstItem="r4D-UK-fEc" firstAttribute="top" secondItem="cxT-Xr-PlJ" secondAttribute="top" id="ahS-pp-TXA"/>
-                                    <constraint firstItem="r4D-UK-fEc" firstAttribute="leading" secondItem="A0G-j2-tdR" secondAttribute="leading" id="rNh-Lh-tmm"/>
-                                    <constraint firstAttribute="bottom" secondItem="r4D-UK-fEc" secondAttribute="bottom" id="sTq-ea-vYv"/>
+                                    <constraint firstItem="mzJ-UE-U7w" firstAttribute="trailing" secondItem="DfI-aI-GOa" secondAttribute="trailing" id="CW5-kc-ejY"/>
+                                    <constraint firstItem="mzJ-UE-U7w" firstAttribute="centerX" secondItem="l3F-7l-GDE" secondAttribute="centerX" id="FOq-ng-cca"/>
+                                    <constraint firstItem="mzJ-UE-U7w" firstAttribute="top" secondItem="DfI-aI-GOa" secondAttribute="top" id="cVD-nj-PlE"/>
+                                    <constraint firstItem="mzJ-UE-U7w" firstAttribute="bottom" secondItem="DfI-aI-GOa" secondAttribute="bottom" id="oiT-BD-QVC"/>
+                                    <constraint firstItem="mzJ-UE-U7w" firstAttribute="leading" secondItem="DfI-aI-GOa" secondAttribute="leading" id="v1e-sc-f8m"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="f9z-B7-BoW"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="cxT-Xr-PlJ"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="DfI-aI-GOa"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="l3F-7l-GDE"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.66541987660000002" green="0.77868574859999995" blue="0.97631341220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -70,6 +64,9 @@
                     <tabBarItem key="tabBarItem" title="Podcasts" image="video" catalog="system" id="vJw-R5-Nbv"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="podcastsScrollView" destination="A0G-j2-tdR" id="I29-id-4nS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFX-4N-3z4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
