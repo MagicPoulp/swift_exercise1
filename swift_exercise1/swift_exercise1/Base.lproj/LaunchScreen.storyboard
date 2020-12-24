@@ -19,7 +19,7 @@
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.66541987660000002" green="0.77868574859999995" blue="0.97631341220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="h0Z-rb-jmT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9gr-Xu-1aK"/>
                             <constraint firstItem="h0Z-rb-jmT" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="q0j-gu-JF5"/>

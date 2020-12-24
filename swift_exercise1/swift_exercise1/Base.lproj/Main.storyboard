@@ -14,12 +14,10 @@
                     <view key="view" contentMode="scaleToFill" id="Syo-6f-08d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.66541987660000002" green="0.77868574859999995" blue="0.97631341220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="KyJ-GM-dxJ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Podcasts" image="video" catalog="system" id="vJw-R5-Nbv">
-                        <color key="badgeColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Podcasts" image="video" catalog="system" id="vJw-R5-Nbv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFX-4N-3z4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -32,7 +30,7 @@
                     <view key="view" contentMode="scaleToFill" id="z9x-Lz-KaT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.66541987660000002" green="0.77868574859999995" blue="0.97631341220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="8gs-5f-L96"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" landscapeImage="house" id="BqV-j6-dON"/>
