@@ -24,18 +24,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0G-j2-tdR">
                                 <rect key="frame" x="10" y="74.5" width="394" height="832.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mzJ-UE-U7w">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mzJ-UE-U7w">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="900"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qY6-Ku-3sv">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="900"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="900" id="QuE-gN-B0p"/>
+                                            <constraint firstAttribute="height" constant="900" identifier="podcastsMainStackViewHeightConstraint" id="x2n-JO-UtQ"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -65,7 +57,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
-                        <outlet property="podcastsScrollView" destination="A0G-j2-tdR" id="I29-id-4nS"/>
+                        <outlet property="podcastsMainStackView" destination="mzJ-UE-U7w" id="wp6-fZ-bMR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFX-4N-3z4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
