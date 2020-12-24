@@ -22,7 +22,9 @@ class PodcastsViewController: UIViewController {
     // https://cocoacasts.com/fm-3-download-an-image-from-a-url-in-swift
     func getData() {
         // Create URL
-        let url = URL(string: "https://localhost:4200/podcasts.json")!
+        // here is how to make it work on HTTPS with more work:
+        // https://jaanus.com/ios-13-certificates/
+        let url = URL(string: "http://localhost:4200/podcasts.json")!
 
         DispatchQueue.global().async {
             // Fetch Image Data

@@ -57,7 +57,7 @@ app.use(express.static('data', {
 // if ever non-HTTPS is needed, uncomment this
 // but note that many things can behave differently when not using HTTPS
 // and android needs a new option for clear text
-if (typeof process.env.USE_HTTPS !== 'undefined') {
+if (true || typeof process.env.USE_HTTPS !== 'undefined') {
   app.listen(port, () => console.log(`The app is running at http://localhost:${port}`));
 } else {
   var http = require('http');
