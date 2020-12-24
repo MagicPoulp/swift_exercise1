@@ -1,56 +1,73 @@
 {
   "images" : [
     {
+      "filename" : "polar-20@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
+      "filename" : "polar-20@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
+      "filename" : "polar-29.png",
+      "idiom" : "iphone",
+      "scale" : "1x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "polar-29@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
+      "filename" : "polar-29@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
+      "filename" : "polar-40@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
+      "filename" : "polar-40@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
+      "filename" : "polar-60@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
+      "filename" : "polar-60@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
+      "filename" : "polar-21.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
+      "filename" : "polar-41.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
+      "filename" : "polar-30.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
@@ -61,6 +78,7 @@
       "size" : "29x29"
     },
     {
+      "filename" : "polar-42.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
@@ -71,11 +89,13 @@
       "size" : "40x40"
     },
     {
+      "filename" : "polar-77.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
+      "filename" : "polar-76@2x-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
@@ -86,6 +106,7 @@
       "size" : "83.5x83.5"
     },
     {
+      "filename" : "polar-1025.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
