@@ -10,6 +10,11 @@ see the back_end folder and the readme to start the server
 We do not use the recent library SwiftUI because not all devices can run it.
 
 # doc
+
+tutorial to use UITableView that is superior to UIScrollView for repeated patterns.
+http://swiftyjimmy.com/rxswift-with-mvvm-part1/
+https://github.com/JussiSuojanen/friends/tree/RxSwift/Friends
+
     // tutorials for the scrollable view
     // tutorial that gives a deprecated way
     //https://medium.com/@jessesahli3/laying-out-dynamic-uiscrollviews-in-interface-builder-e4f0645bc2c7
