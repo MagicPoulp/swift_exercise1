@@ -76,6 +76,8 @@ class PodcastsViewController: UIViewController {
     // https://stackoverflow.com/questions/29094129/swift-creating-a-vertical-uiscrollview-programmatically
     func addPodcastView(index: Int) {
         let view = UIView()
+        // arranged is much better and should be fixed
+        //self.podcastsMainStackView.addArrangedSubview(view)
         self.podcastsMainStackView.addSubview(view)
         // when doing manual setups, it seems we need this line below
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +100,7 @@ class PodcastsViewController: UIViewController {
                            attribute: .trailingMargin,
                            multiplier: 1.0,
                            constant: 0.0).isActive = true
-        
+
         // it seems that translatesAutoresizingMaskIntoConstraints = false
         // removes the automatic behaviour of the StackView
         NSLayoutConstraint(item: view,
