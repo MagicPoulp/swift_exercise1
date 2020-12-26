@@ -58,6 +58,7 @@ class PodcastsTableViewController: UITableViewController {
                     while (podcasts.count < 30) {
                         podcasts.append(podcasts[0])
                     }
+
                     self.podcasts = podcasts
                     self.tableViewInstance.reloadData()
                     print("count when loaded", podcasts.count)
