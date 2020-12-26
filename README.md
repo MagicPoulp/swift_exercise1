@@ -32,7 +32,7 @@ https://developer.apple.com/documentation/uikit/views_and_controls/table_views
 official doc for a table view:
 https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/CreateATableView.html
 
-how to navigate insidea table:
+how to navigate inside a table:
 https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/ImplementNavigation.html#//apple_ref/doc/uid/TP40015214-CH16-SW1
 
 stack view cell
