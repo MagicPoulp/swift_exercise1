@@ -151,6 +151,7 @@
                                     <outlet property="numberOfEpisodes" destination="t5h-x7-dAt" id="7YM-Mu-aa6"/>
                                     <outlet property="partOfTheDescription" destination="jWq-i0-7K0" id="O5N-8Y-ASb"/>
                                     <outlet property="title" destination="9Vb-Lb-4Pr" id="3ZF-15-JHD"/>
+                                    <segue destination="lFD-Lh-lcw" kind="show" id="QJT-ZW-Fg5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -168,9 +169,53 @@
             </objects>
             <point key="canvasLocation" x="2367" y="98"/>
         </scene>
+        <!--PodcastsDetails-->
+        <scene sceneID="87k-8F-SGN">
+            <objects>
+                <viewController id="P2R-02-mcX" userLabel="PodcastsDetails" customClass="PodcastsDetailsViewController" customModule="swift_exercise1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GE7-A9-ATo">
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="669"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="y4Z-bE-fsQ"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ju7-JI-OKr">
+                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="j9Z-cn-KbW">
+                            <connections>
+                                <action selector="podcastsDetailsBackButton:" destination="P2R-02-mcX" id="7Yw-HW-7zN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gad-xR-ZDp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3929" y="99"/>
+        </scene>
+        <!--Podcasts Navigation Controller-->
+        <scene sceneID="Yld-hd-RfD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lFD-Lh-lcw" userLabel="Podcasts Navigation Controller" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="pDC-xN-x0y"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="998-om-e3u">
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="P2R-02-mcX" kind="relationship" relationship="rootViewController" id="D8F-1D-lGP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RH7-k9-pOQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3133" y="98"/>
+        </scene>
     </scenes>
     <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="video" catalog="system" width="128" height="83"/>
     </resources>

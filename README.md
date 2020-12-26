@@ -1,3 +1,15 @@
+# Nice features
+
+We use a Table View because it suits well the problem at hand.
+
+We use the Interface Builder and AutoSize as much as possible.
+
+We use a global tab navigation controller. And in the podcasts page, we have a container that embedds a table view controller.
+
+We use a popup for the details page because it can take the whole screen. And we have a custom back button to dismiss the popup.
+
+We customized thoroughly the table view, with extra colors, and using StackView.
+
 # Licenses
 
 See the licenses folder for all the various licenses used.
