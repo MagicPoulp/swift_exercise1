@@ -2,7 +2,7 @@
 
 We use a Table View because it suits well the problem at hand.
 
-We use the Interface Builder and AutoSize as much as possible.
+We use the Interface Builder and Auto Layout as much as possible.
 
 We use a global tab navigation controller. And in the podcasts page, we have a container that embedds a table view controller.
 
@@ -38,6 +38,9 @@ https://stackoverflow.com/questions/17499391/ios-nested-view-controllers-view-in
 Here it is said that a Table View Controller is necessary:
 https://developer.apple.com/documentation/uikit/views_and_controls/table_views
 "Table view controller. You typically use a UITableViewController object to manage a table view. You can use other view controllers too, but a table view controller is required for some table-related features to work."
+
+pass data
+https://learnappmaking.com/pass-data-between-view-controllers-swift-how-to/#forward-segues
 
 ## UITableView
 

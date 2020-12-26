@@ -95,6 +95,22 @@ class PodcastsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return podcasts.count
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        print("prepare")
+        if segue.destination is UINavigationController
+        {
+            print("prepare2")
+            //https://stackoverflow.com/questions/25369412/swift-pass-data-through-navigation-controller
+            let vc = segue.destination as? UINavigationController
+            if let chidVC = vc?.topViewController as? PodcastsDetailsViewController {
+                print("prepare3 " + String(podcasts.count))
+                chidVC.podcasts = podcasts
+            }
+        }
+    }
 }
 
 // we cannot put the class below in a separate file due to a bug in XCode.

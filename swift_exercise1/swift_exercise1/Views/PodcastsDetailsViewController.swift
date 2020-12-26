@@ -10,6 +10,8 @@ import UIKit
 
 class PodcastsDetailsViewController: UIViewController {
 
+    var podcasts: Array<Podcast> = Array<Podcast>()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +30,7 @@ class PodcastsDetailsViewController: UIViewController {
     */
 
     @IBAction func podcastsDetailsBackButton(_ sender: Any) {
+        print(podcasts.count)
         self.dismiss(animated: true)
     }
 }
