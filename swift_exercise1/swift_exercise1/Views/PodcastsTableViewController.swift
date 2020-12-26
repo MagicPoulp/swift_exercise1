@@ -54,11 +54,7 @@ class PodcastsTableViewController: UITableViewController {
                     // use URLSession like in the link above to catch preoperly http errors
                     //let dataJson = data.data(using: .utf8)!
                     let dataJson = data
-                    var podcasts: Array<Podcast> = try! JSONDecoder().decode([Podcast].self, from: dataJson)
-                    while (podcasts.count < 30) {
-                        podcasts.append(podcasts[0])
-                    }
-
+                    let podcasts: Array<Podcast> = try! JSONDecoder().decode([Podcast].self, from: dataJson)
                     self.podcasts = podcasts
                     self.tableViewInstance.reloadData()
                 }
@@ -75,12 +71,23 @@ class PodcastsTableViewController: UITableViewController {
         let cellData: Podcast = podcasts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "podcastsCell")! as! PodcastsTableViewCell
         cell.title.text = cellData.title
+        cell.title.font = UIFont.boldSystemFont(ofSize: 16.0)
         cell.partOfTheDescription.numberOfLines = 2
         cell.partOfTheDescription.adjustsFontSizeToFitWidth = false
         cell.partOfTheDescription.lineBreakMode = .byTruncatingTail
         cell.partOfTheDescription.text = cellData.description
-        cell.numberOfEpisodes.text = "Episodes: " + String(cellData.numberOfEpisodes)
-
+        cell.numberOfEpisodes.text = String(cellData.numberOfEpisodes) + " episodes"
+        if (indexPath.row % 2 == 0) {
+            cell.backgroundColor = UIColor(red: 245, green: 245, blue: 245)
+        } else {
+            cell.backgroundColor = UIColor(red: 230, green: 230, blue: 230)
+        }
+        // https://stackoverflow.com/questions/26895370/uitableviewcell-selected-background-color-on-multiple-selection
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(red: 200, green: 220, blue: 220)
+        cell.selectedBackgroundView = backgroundView
+        //cell.selectedBackgroundView?.backgroundColor = .green
+        //cell.selectedBackgroundView?.tintColor = .green
         return cell;
     }
     

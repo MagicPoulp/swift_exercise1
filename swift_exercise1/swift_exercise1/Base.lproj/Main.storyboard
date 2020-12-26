@@ -104,7 +104,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="podcastsCell" id="qqT-dk-qgd" customClass="PodcastsTableViewCell" customModule="swift_exercise1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="394" height="101.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qqT-dk-qgd" id="c1K-Nh-iwr">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qqT-dk-qgd" id="c1K-Nh-iwr" userLabel="podcastsCellView">
                                     <rect key="frame" x="0.0" y="0.0" width="394" height="101.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -141,10 +141,10 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="KWK-ld-JVs" secondAttribute="bottom" constant="10" id="0v9-WC-OuJ"/>
-                                        <constraint firstItem="KWK-ld-JVs" firstAttribute="top" secondItem="c1K-Nh-iwr" secondAttribute="top" constant="10" id="UwN-v3-YKc"/>
-                                        <constraint firstAttribute="trailing" secondItem="KWK-ld-JVs" secondAttribute="trailing" constant="10" id="dEM-yM-jZh"/>
-                                        <constraint firstItem="KWK-ld-JVs" firstAttribute="leading" secondItem="c1K-Nh-iwr" secondAttribute="leading" constant="10" id="f6c-Dl-QSK"/>
+                                        <constraint firstItem="KWK-ld-JVs" firstAttribute="top" secondItem="c1K-Nh-iwr" secondAttribute="top" constant="10" id="50o-Sv-SOu"/>
+                                        <constraint firstAttribute="bottom" secondItem="KWK-ld-JVs" secondAttribute="bottom" constant="10" id="IMc-ne-CMd"/>
+                                        <constraint firstItem="KWK-ld-JVs" firstAttribute="leading" secondItem="c1K-Nh-iwr" secondAttribute="leading" constant="10" id="cyO-hg-ELn"/>
+                                        <constraint firstAttribute="trailing" secondItem="KWK-ld-JVs" secondAttribute="trailing" constant="10" id="gaU-MC-ZQg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

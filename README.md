@@ -23,10 +23,17 @@ embed view controllers in a tree:
 https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html
 https://stackoverflow.com/questions/17499391/ios-nested-view-controllers-view-inside-uiviewcontrollers-view
 
+Here it is said that a Table View Controller is necessary:
+https://developer.apple.com/documentation/uikit/views_and_controls/table_views
+"Table view controller. You typically use a UITableViewController object to manage a table view. You can use other view controllers too, but a table view controller is required for some table-related features to work."
+
 ## UITableView
 
-Official doc for a table view:
+official doc for a table view:
 https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/CreateATableView.html
+
+how to navigate insidea table:
+https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/ImplementNavigation.html#//apple_ref/doc/uid/TP40015214-CH16-SW1
 
 stack view cell
 https://ripplearc.github.io/iOS-UI-AutoSize-UITableViewCell/
