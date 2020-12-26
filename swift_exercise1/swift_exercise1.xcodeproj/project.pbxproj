@@ -16,6 +16,7 @@
 		E4E8082025946CBE00FB93AB /* swift_exercise1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E8081F25946CBE00FB93AB /* swift_exercise1Tests.swift */; };
 		E4ECE37125977E36004DB336 /* SimpleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECE37025977E36004DB336 /* SimpleExtensions.swift */; };
 		E4ECE3732597961A004DB336 /* PodcastsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECE3722597961A004DB336 /* PodcastsDetailsViewController.swift */; };
+		E4ECE37525979F5F004DB336 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECE37425979F5F004DB336 /* Constants.swift */; };
 		E4FFFE17259751B2002483F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4FFFE15259751B2002483F6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		E4E8082125946CBE00FB93AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4ECE37025977E36004DB336 /* SimpleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleExtensions.swift; sourceTree = "<group>"; };
 		E4ECE3722597961A004DB336 /* PodcastsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsDetailsViewController.swift; sourceTree = "<group>"; };
+		E4ECE37425979F5F004DB336 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E4FFFE16259751B2002483F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				E4ECE37025977E36004DB336 /* SimpleExtensions.swift */,
+				E4ECE37425979F5F004DB336 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				E4E8080B25946CBD00FB93AB /* SceneDelegate.swift in Sources */,
 				E4ECE37125977E36004DB336 /* SimpleExtensions.swift in Sources */,
 				E4ECE3732597961A004DB336 /* PodcastsDetailsViewController.swift in Sources */,
+				E4ECE37525979F5F004DB336 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

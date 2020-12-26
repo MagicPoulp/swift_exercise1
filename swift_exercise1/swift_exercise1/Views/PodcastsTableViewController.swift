@@ -66,10 +66,11 @@ class PodcastsTableViewController: UITableViewController {
         //tableView.dataSource = podcasts!
     }
 
-    // Default cell
+    // Definition of the cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData: Podcast = podcasts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "podcastsCell")! as! PodcastsTableViewCell
+        cell.index = indexPath.row
         cell.title.text = cellData.title
         cell.title.font = UIFont.boldSystemFont(ofSize: 16.0)
         cell.partOfTheDescription.numberOfLines = 2
@@ -78,36 +79,35 @@ class PodcastsTableViewController: UITableViewController {
         cell.partOfTheDescription.text = cellData.description
         cell.numberOfEpisodes.text = String(cellData.numberOfEpisodes) + " episodes"
         if (indexPath.row % 2 == 0) {
-            cell.backgroundColor = UIColor(red: 245, green: 245, blue: 245)
+            cell.backgroundColor = ConstantsEnum.lightgray900
         } else {
-            cell.backgroundColor = UIColor(red: 230, green: 230, blue: 230)
+            cell.backgroundColor = ConstantsEnum.lightgray800
         }
         // https://stackoverflow.com/questions/26895370/uitableviewcell-selected-background-color-on-multiple-selection
         let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor(red: 200, green: 220, blue: 220)
+        backgroundView.backgroundColor = ConstantsEnum.teal1
         cell.selectedBackgroundView = backgroundView
         //cell.selectedBackgroundView?.backgroundColor = .green
         //cell.selectedBackgroundView?.tintColor = .green
         return cell;
     }
     
-    // Define no of rows in your tableView
+    // Define the number of rows in your tableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return podcasts.count
     }
     
     // MARK: - Navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        print("prepare")
         if segue.destination is UINavigationController
         {
-            print("prepare2")
             //https://stackoverflow.com/questions/25369412/swift-pass-data-through-navigation-controller
             let vc = segue.destination as? UINavigationController
+            //let cell = sender as! PodcastsTableViewCell
             if let chidVC = vc?.topViewController as? PodcastsDetailsViewController {
-                print("prepare3 " + String(podcasts.count))
-                chidVC.podcasts = podcasts
+                chidVC.podcast = podcasts[0]
             }
         }
     }
@@ -123,6 +123,7 @@ class PodcastsTableViewCell: UITableViewCell {
     @IBOutlet var title: UILabel!
     @IBOutlet var partOfTheDescription: UILabel!
     @IBOutlet var numberOfEpisodes: UILabel!
+    var index: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()

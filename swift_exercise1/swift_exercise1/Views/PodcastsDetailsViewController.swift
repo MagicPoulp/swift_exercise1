@@ -10,27 +10,27 @@ import UIKit
 
 class PodcastsDetailsViewController: UIViewController {
 
-    var podcasts: Array<Podcast> = Array<Podcast>()
+    @IBOutlet var detailsTitle: UILabel!
+    @IBOutlet var detailsDescription: UILabel!
+    @IBOutlet var detailsNumberOfEpisodes: UILabel!
+    var podcast: Podcast? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = ConstantsEnum.lightgray900
+        self.detailsTitle.text = podcast?.title
+        self.detailsTitle.font = UIFont.boldSystemFont(ofSize: 16.0)
+        self.detailsDescription.text = podcast?.description
+        self.detailsDescription.numberOfLines = 15
+        let numberOfEpisodes: Int = podcast?.numberOfEpisodes ?? -1
+        self.detailsNumberOfEpisodes.text = String(numberOfEpisodes) + " episodes"
+        
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // MARK: - Actions
 
     @IBAction func podcastsDetailsBackButton(_ sender: Any) {
-        print(podcasts.count)
         self.dismiss(animated: true)
     }
 }

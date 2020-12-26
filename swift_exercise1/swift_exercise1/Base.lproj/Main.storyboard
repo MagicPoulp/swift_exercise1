@@ -176,7 +176,42 @@
                     <view key="view" contentMode="scaleToFill" id="GE7-A9-ATo">
                         <rect key="frame" x="0.0" y="0.0" width="394" height="669"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="LEe-Da-DeN">
+                                <rect key="frame" x="40" y="96" width="314" height="141.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1b-T3-M2C">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7l-QN-4qs">
+                                        <rect key="frame" x="0.0" y="60.5" width="314" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="numberOfEpisodes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVo-Nr-ovu">
+                                        <rect key="frame" x="0.0" y="121" width="314" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="A7l-QN-4qs" firstAttribute="centerX" secondItem="LEe-Da-DeN" secondAttribute="centerX" id="4Yg-LX-QAH"/>
+                                    <constraint firstItem="PVo-Nr-ovu" firstAttribute="centerX" secondItem="LEe-Da-DeN" secondAttribute="centerX" id="VEa-qo-dgg"/>
+                                    <constraint firstItem="Y1b-T3-M2C" firstAttribute="centerX" secondItem="LEe-Da-DeN" secondAttribute="centerX" id="lSu-BO-zBd"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="y4Z-bE-fsQ" firstAttribute="trailing" secondItem="LEe-Da-DeN" secondAttribute="trailing" constant="40" id="FwT-KC-L2I"/>
+                            <constraint firstItem="LEe-Da-DeN" firstAttribute="leading" secondItem="y4Z-bE-fsQ" secondAttribute="leading" constant="40" id="Zbc-Pa-OiZ"/>
+                            <constraint firstItem="LEe-Da-DeN" firstAttribute="top" secondItem="y4Z-bE-fsQ" secondAttribute="top" constant="40" id="xNw-cY-xdW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="y4Z-bE-fsQ"/>
                     </view>
                     <toolbarItems/>
@@ -188,6 +223,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="detailsDescription" destination="A7l-QN-4qs" id="gpZ-1H-xWN"/>
+                        <outlet property="detailsNumberOfEpisodes" destination="PVo-Nr-ovu" id="J1o-Ns-Bkt"/>
+                        <outlet property="detailsTitle" destination="Y1b-T3-M2C" id="3CG-2n-M8t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gad-xR-ZDp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
