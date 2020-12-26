@@ -17,20 +17,57 @@ struct Podcast: Decodable {
     let description: String
 }
 
-class PodcastsViewController: UIViewController {
+class PodcastsTableViewController: UITableViewController {
 
     //MARK: Properties
-    @IBOutlet var podcastsMainStackView: UIStackView!
-    
-    var podcastViewHeight: CGFloat = 100
-    var podcastViewSpacing: CGFloat = 10
+    @IBOutlet var tableViewInstance: UITableView!
+    var podcastsURL: String = "http://localhost:4200/podcasts.json"
+    var podcasts: Array<Podcast> = Array<Podcast>()
 
+    //MARK: Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //https://stackoverflow.com/questions/32453145/storyboard-static-table-view-too-many-rows
+        tableViewInstance.tableFooterView = UIView(frame: .zero)
         getData()
     }
 
+    //MARK: Data management
+    // we could use a library (like Refit, or RetrofireSwift), but it is also a security concern to trust the library
+    // and I do not have time to check the libraries
+    // we also need a better way to react to errors and display errors
+    // maybe this could be moved to a delegate
+    // https://cocoacasts.com/fm-3-download-an-image-from-a-url-in-swift
+    func getData() {
+        // Create URL
+        // here is how to make it work on HTTPS with more work:
+        // https://jaanus.com/ios-13-certificates/
+        let url = URL(string: self.podcastsURL)!
+
+        // a new thread prevent blocking the main thread
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url) {
+                // as said in the tutorial UI updates must be run on the main thread
+                DispatchQueue.main.async {
+                    // decoding taken from here:
+                    // https://programmingwithswift.com/parse-json-from-file-and-url-with-swift/
+                    // use URLSession like in the link above to catch preoperly http errors
+                    //let dataJson = data.data(using: .utf8)!
+                    let dataJson = data
+                    let podcasts: Array<Podcast> = try! JSONDecoder().decode([Podcast].self, from: dataJson)
+                    self.podcasts = podcasts
+                    self.tableViewInstance.reloadData()
+                    print("count when loaded", podcasts.count)
+                }
+            }
+        }
+    }
+
+    func addPodcasts(podcasts: Array<Podcast>) {
+        //tableView.dataSource = podcasts!
+    }
+
+    /*
     //MARK: Data management
     // https://cocoacasts.com/fm-3-download-an-image-from-a-url-in-swift
     func getData() {
@@ -111,5 +148,61 @@ class PodcastsViewController: UIViewController {
                             multiplier: 1.0,
                             constant: (self.podcastViewHeight + self.podcastViewSpacing) * CGFloat(index)).isActive = true
     }
-}
+    */
+    
+    // Default cell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellData: Podcast = podcasts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "podcastsCell")! as! PodcastsTableViewCell
+        print("text" + cellData.title)
+        cell.title.text = cellData.title
 
+        return cell;
+    }
+    
+    // Define no of rows in your tableView
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return podcasts.count
+    }
+}
+/*
+extension PodcastsViewController: UITableViewDataSource, UITableViewDelegate {
+    // Default cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellData: Podcast = podcasts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")! as UITableViewCell
+        //cell.title = cellData.title
+
+        return cell;
+    }
+    
+    // Define no of rows in your tableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("count" + String(podcasts.count))
+        return podcasts.count
+    }
+
+}*/
+
+/*
+ https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/CreateATableView.html
+ */
+// a bug in a specific version of XCode 11.7 seems to block
+// the assistant from detecting the class if in a separate file
+// but it works for the controller
+class PodcastsTableViewCell: UITableViewCell {
+    //MARK: Properties
+    @IBOutlet var title: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+
+}
