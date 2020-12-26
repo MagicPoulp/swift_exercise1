@@ -54,7 +54,10 @@ class PodcastsTableViewController: UITableViewController {
                     // use URLSession like in the link above to catch preoperly http errors
                     //let dataJson = data.data(using: .utf8)!
                     let dataJson = data
-                    let podcasts: Array<Podcast> = try! JSONDecoder().decode([Podcast].self, from: dataJson)
+                    var podcasts: Array<Podcast> = try! JSONDecoder().decode([Podcast].self, from: dataJson)
+                    while (podcasts.count < 30) {
+                        podcasts.append(podcasts[0])
+                    }
                     self.podcasts = podcasts
                     self.tableViewInstance.reloadData()
                     print("count when loaded", podcasts.count)
