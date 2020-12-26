@@ -96,20 +96,20 @@
         <scene sceneID="MUe-gd-6NE">
             <objects>
                 <tableViewController id="aKf-AF-JIF" customClass="PodcastsTableViewController" customModule="swift_exercise1" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bzi-NS-8Mf">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bzi-NS-8Mf">
                         <rect key="frame" x="0.0" y="0.0" width="394" height="723"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="podcastsCell" id="qqT-dk-qgd" customClass="PodcastsTableViewCell" customModule="swift_exercise1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="394" height="92"/>
+                                <rect key="frame" x="0.0" y="28" width="394" height="101.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qqT-dk-qgd" id="c1K-Nh-iwr">
-                                    <rect key="frame" x="0.0" y="0.0" width="394" height="92"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="101.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KWK-ld-JVs" userLabel="podcastsCellStackView">
-                                            <rect key="frame" x="10" y="10" width="374" height="82"/>
+                                            <rect key="frame" x="10" y="10" width="374" height="81.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vb-Lb-4Pr">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -120,14 +120,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWq-i0-7K0">
-                                                    <rect key="frame" x="0.0" y="30.5" width="374" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="partOfTheDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWq-i0-7K0">
+                                                    <rect key="frame" x="0.0" y="30.5" width="374" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="numberOfEpisodes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5h-x7-dAt">
-                                                    <rect key="frame" x="0.0" y="61.5" width="374" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="61" width="374" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -141,13 +141,15 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="KWK-ld-JVs" secondAttribute="bottom" id="0v9-WC-OuJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="KWK-ld-JVs" secondAttribute="bottom" constant="10" id="0v9-WC-OuJ"/>
                                         <constraint firstItem="KWK-ld-JVs" firstAttribute="top" secondItem="c1K-Nh-iwr" secondAttribute="top" constant="10" id="UwN-v3-YKc"/>
                                         <constraint firstAttribute="trailing" secondItem="KWK-ld-JVs" secondAttribute="trailing" constant="10" id="dEM-yM-jZh"/>
                                         <constraint firstItem="KWK-ld-JVs" firstAttribute="leading" secondItem="c1K-Nh-iwr" secondAttribute="leading" constant="10" id="f6c-Dl-QSK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="numberOfEpisodes" destination="t5h-x7-dAt" id="7YM-Mu-aa6"/>
+                                    <outlet property="partOfTheDescription" destination="jWq-i0-7K0" id="O5N-8Y-ASb"/>
                                     <outlet property="title" destination="9Vb-Lb-4Pr" id="3ZF-15-JHD"/>
                                 </connections>
                             </tableViewCell>
