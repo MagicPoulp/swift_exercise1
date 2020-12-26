@@ -28,6 +28,9 @@ https://stackoverflow.com/questions/17499391/ios-nested-view-controllers-view-in
 Official doc for a table view:
 https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/CreateATableView.html
 
+stack view cell
+https://ripplearc.github.io/iOS-UI-AutoSize-UITableViewCell/
+
 tutorial to use UITableView that is superior to UIScrollView for repeated patterns.
 but too many library customization files on libraries
 http://swiftyjimmy.com/rxswift-with-mvvm-part1/
