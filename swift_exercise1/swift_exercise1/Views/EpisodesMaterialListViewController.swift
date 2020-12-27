@@ -82,7 +82,7 @@ class EpisodesCollectionViewController: UICollectionViewController {
         cell.partOfTheDescription.text = cellData.description
         cell.duration.text = String(cellData.duration) + " min"
         let dateArr = cellData.created.split(separator: "T")
-        cell.date.text = String(dateArr[0])
+        cell.date.text = "Created: " + String(dateArr[0])
         if (indexPath.row % 2 == 0) {
             cell.backgroundColor = ConstantsEnum.lightgray900
         } else {
@@ -93,6 +93,18 @@ class EpisodesCollectionViewController: UICollectionViewController {
         backgroundView.backgroundColor = ConstantsEnum.teal1
         cell.selectedBackgroundView = backgroundView
         return cell
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is EpisodesDetailsViewController
+        {
+            //https://stackoverflow.com/questions/25369412/swift-pass-data-through-navigation-controller
+            let vc = segue.destination as? EpisodesDetailsViewController
+            let cell = sender as! EpisodesViewCell
+            vc?.episode = episodes[cell.index]
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -403,10 +403,63 @@
                     <view key="view" contentMode="scaleToFill" id="68P-3X-Yl3">
                         <rect key="frame" x="0.0" y="0.0" width="394" height="723"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="4SE-7i-f0t">
+                                <rect key="frame" x="40" y="128" width="314" height="555"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnY-ta-G7l" userLabel="title">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="313"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skn-gb-ryg" userLabel="podcast">
+                                        <rect key="frame" x="0.0" y="353" width="314" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHR-9S-0Ba" userLabel="description">
+                                        <rect key="frame" x="0.0" y="413.5" width="314" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDw-hF-Czh" userLabel="duration">
+                                        <rect key="frame" x="0.0" y="474" width="314" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5g-hI-TQo" userLabel="date">
+                                        <rect key="frame" x="0.0" y="534.5" width="314" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ZnY-ta-G7l" firstAttribute="top" secondItem="4SE-7i-f0t" secondAttribute="top" id="d2W-kT-90t"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4SE-7i-f0t" firstAttribute="top" secondItem="LUi-pP-JMM" secondAttribute="top" constant="40" id="7em-ec-re5"/>
+                            <constraint firstItem="LUi-pP-JMM" firstAttribute="trailing" secondItem="4SE-7i-f0t" secondAttribute="trailing" constant="40" id="BId-LC-cUG"/>
+                            <constraint firstItem="LUi-pP-JMM" firstAttribute="bottom" secondItem="4SE-7i-f0t" secondAttribute="bottom" constant="40" id="L48-QT-VSz"/>
+                            <constraint firstItem="4SE-7i-f0t" firstAttribute="leading" secondItem="LUi-pP-JMM" secondAttribute="leading" constant="40" id="hGl-HE-6fx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LUi-pP-JMM"/>
                     </view>
                     <navigationItem key="navigationItem" id="cYe-4l-arW"/>
+                    <connections>
+                        <outlet property="date" destination="n5g-hI-TQo" id="3Dh-hk-N3s"/>
+                        <outlet property="descriptionLabel" destination="SHR-9S-0Ba" id="ntE-X7-bhg"/>
+                        <outlet property="duration" destination="MDw-hF-Czh" id="EZy-IG-l42"/>
+                        <outlet property="podcastLabel" destination="Skn-gb-ryg" id="AcO-2W-06V"/>
+                        <outlet property="titleLabel" destination="ZnY-ta-G7l" id="df4-BY-EMB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSD-yy-Jmw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

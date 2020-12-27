@@ -97,9 +97,9 @@
 		E412AA8525972C45003AC949 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E4ADA25F259884DA00D47C58 /* EpisodesMaterialListViewController.swift */,
 				E4AADC33259750AB007859F3 /* PodcastsTableViewController.swift */,
 				E4ECE3722597961A004DB336 /* PodcastsDetailsViewController.swift */,
+				E4ADA25F259884DA00D47C58 /* EpisodesMaterialListViewController.swift */,
 				E424E1B72598DDB300F84D79 /* EpisodesDetailsViewController.swift */,
 			);
 			path = Views;
