@@ -116,6 +116,8 @@ extension EpisodesCollectionViewController: PinterestLayoutDelegate {
   }
 }
 
+// large parts of the code was copied from here:
+// it is unlicensed in the downloaded content
 // https://www.raywenderlich.com/4829472-uicollectionview-custom-layout-tutorial-pinterest
 protocol PinterestLayoutDelegate: AnyObject {
   func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat

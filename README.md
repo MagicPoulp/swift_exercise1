@@ -2,7 +2,7 @@
 
 We do not use the recent library SwiftUI because not all devices can run it.
 
-We use a Table View because it suits well the problem at hand.
+We use a Table View because it suits well the problem at hand. We also use a  Material Design List based on a UICollectionViewController and using a Podfile.
 
 We use the Interface Builder and Auto Layout as much as possible.
 

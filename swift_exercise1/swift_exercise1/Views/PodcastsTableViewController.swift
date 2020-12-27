@@ -30,6 +30,7 @@ class PodcastsTableViewController: UITableViewController {
         super.viewDidLoad()
         //https://stackoverflow.com/questions/32453145/storyboard-static-table-view-too-many-rows
         tableViewInstance.tableFooterView = UIView(frame: .zero)
+        tableViewInstance.backgroundView?.backgroundColor = .green
         getData()
     }
     

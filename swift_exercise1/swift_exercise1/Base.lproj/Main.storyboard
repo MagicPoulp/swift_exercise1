@@ -119,7 +119,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bzi-NS-8Mf">
                         <rect key="frame" x="0.0" y="0.0" width="394" height="723"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.66541987660000002" green="0.77868574859999995" blue="0.97631341220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="podcastsCell" id="qqT-dk-qgd" customClass="PodcastsTableViewCell" customModule="swift_exercise1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="394" height="101.5"/>
@@ -295,7 +295,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" id="4dc-ev-kFg">
                         <rect key="frame" x="0.0" y="0.0" width="394" height="723"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.66541987660000002" green="0.77868574859999995" blue="0.97631341220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <collectionViewLayout key="collectionViewLayout" id="SAA-0A-DVc" customClass="PinterestLayout" customModule="swift_exercise1" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="episodesCell" id="jnA-Mk-8dV" customClass="EpisodesViewCell" customModule="swift_exercise1" customModuleProvider="target">
