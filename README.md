@@ -38,6 +38,8 @@ See the doc folder for the assignment.
 ## Google Material Design for iOS
 
 https://material.io/components/lists/ios#using-lists
+how to customize a collection layout
+https://www.raywenderlich.com/4829472-uicollectionview-custom-layout-tutorial-pinterest
 
 ## View controllers
 

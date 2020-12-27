@@ -39,6 +39,11 @@ class EpisodesCollectionViewController: UICollectionViewController {
     //MARK: Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
+          layout.delegate = self
+        }
+
         //https://stackoverflow.com/questions/32453145/storyboard-static-table-view-too-many-rows
         getData()
     }
@@ -76,7 +81,8 @@ class EpisodesCollectionViewController: UICollectionViewController {
         cell.partOfTheDescription.lineBreakMode = .byTruncatingTail
         cell.partOfTheDescription.text = cellData.description
         cell.duration.text = String(cellData.duration) + " min"
-        cell.date.text = String(cellData.created)
+        let dateArr = cellData.created.split(separator: "T")
+        cell.date.text = String(dateArr[0])
         if (indexPath.row % 2 == 0) {
             cell.backgroundColor = ConstantsEnum.lightgray900
         } else {
@@ -88,9 +94,124 @@ class EpisodesCollectionViewController: UICollectionViewController {
         cell.selectedBackgroundView = backgroundView
         return cell
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+      return CGSize(width: itemSize, height: itemSize)
+    }
+/*
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let cellSize = CGSize(width: collectionView.bounds.width, height: 400)
+        return cellSize
+    }*/
 }
 
+extension EpisodesCollectionViewController: PinterestLayoutDelegate {
+  func collectionView(
+      _ collectionView: UICollectionView,
+      heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
+    // 4 label heights, top and bottom margins, and 30 in-between spaces
+    return 20 * 4 + 20 + 30
+  }
+}
+
+// https://www.raywenderlich.com/4829472-uicollectionview-custom-layout-tutorial-pinterest
+protocol PinterestLayoutDelegate: AnyObject {
+  func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
+}
+
+class PinterestLayout: UICollectionViewLayout {
+  // 1
+  weak var delegate: PinterestLayoutDelegate?
+
+  // 2
+  private let numberOfColumns = 1
+  private let cellPadding: CGFloat = 0
+
+  // 3
+  private var cache: [UICollectionViewLayoutAttributes] = []
+
+  // 4
+  private var contentHeight: CGFloat = 0
+
+  private var contentWidth: CGFloat {
+    guard let collectionView = collectionView else {
+      return 0
+    }
+    let insets = collectionView.contentInset
+    return collectionView.bounds.width - (insets.left + insets.right)
+  }
+
+  // 5
+  override var collectionViewContentSize: CGSize {
+    return CGSize(width: contentWidth, height: contentHeight)
+  }
+  
+  override func prepare() {
+    // 1
+    guard
+      cache.isEmpty == true,
+      let collectionView = collectionView
+      else {
+        return
+    }
+    // 2
+    let columnWidth = contentWidth / CGFloat(numberOfColumns)
+    var xOffset: [CGFloat] = []
+    for column in 0..<numberOfColumns {
+      xOffset.append(CGFloat(column) * columnWidth)
+    }
+    var column = 0
+    var yOffset: [CGFloat] = .init(repeating: 0, count: numberOfColumns)
+      
+    // 3
+    for item in 0..<collectionView.numberOfItems(inSection: 0) {
+      let indexPath = IndexPath(item: item, section: 0)
+        
+      // 4
+      let photoHeight = delegate?.collectionView(
+        collectionView,
+        heightForPhotoAtIndexPath: indexPath) ?? 180
+      let height = cellPadding * 2 + photoHeight
+      let frame = CGRect(x: xOffset[column],
+                         y: yOffset[column],
+                         width: columnWidth,
+                         height: height)
+      let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
+        
+      // 5
+      let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+      attributes.frame = insetFrame
+      cache.append(attributes)
+        
+      // 6
+      contentHeight = max(contentHeight, frame.maxY)
+      yOffset[column] = yOffset[column] + height
+        
+      column = column < (numberOfColumns - 1) ? (column + 1) : 0
+    }
+  }
+  
+  override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    var visibleLayoutAttributes: [UICollectionViewLayoutAttributes] = []
+    
+    // Loop through the cache and look for items in the rect
+    for attributes in cache {
+      if attributes.frame.intersects(rect) {
+        visibleLayoutAttributes.append(attributes)
+      }
+    }
+    return visibleLayoutAttributes
+  }
+  
+  override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    return cache[indexPath.item]
+  }
+}
+
+
+// https://material.io/components/lists
 //class EpisodesViewCell: UICollectionViewCell {
 class EpisodesViewCell: MDCBaseCell {
     @IBOutlet var title: UILabel!
