@@ -265,7 +265,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-ns-OIm">
                                 <rect key="frame" x="10" y="80" width="394" height="723"/>
                                 <connections>
-                                    <segue destination="fof-bE-ZfT" kind="embed" id="rTU-Ff-nsP"/>
+                                    <segue destination="d3s-Ys-2id" kind="embed" id="rTU-Ff-nsP"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -360,6 +360,7 @@
                                     <outlet property="duration" destination="Mll-MI-ZRL" id="TsD-d6-If8"/>
                                     <outlet property="partOfTheDescription" destination="k8M-kA-YCS" id="gB5-jz-Mh1"/>
                                     <outlet property="title" destination="tdO-DN-PsA" id="bQ3-xK-DzX"/>
+                                    <segue destination="t08-9x-sf6" kind="show" id="MJE-1d-nCg"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -368,13 +369,48 @@
                             <outlet property="delegate" destination="fof-bE-ZfT" id="6NT-vL-n5C"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="iTf-Gg-mdr"/>
                     <connections>
                         <outlet property="collectionViewInstance" destination="4dc-ev-kFg" id="H98-PR-s0O"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5iV-gO-NSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2028.985507246377" y="2031.3616071428571"/>
+        </scene>
+        <!--Episodes Navigation Controller-->
+        <scene sceneID="omb-70-bVS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d3s-Ys-2id" userLabel="Episodes Navigation Controller" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="341-iS-0Nw">
+                        <rect key="frame" x="0.0" y="44" width="394" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fof-bE-ZfT" kind="relationship" relationship="rootViewController" id="kLt-Cs-wHb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cl8-Nu-Jwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="1150.7246376811595" y="2031.3616071428571"/>
+        </scene>
+        <!--EpisodesDetails-->
+        <scene sceneID="k3A-zf-BYY">
+            <objects>
+                <viewController id="t08-9x-sf6" userLabel="EpisodesDetails" customClass="EpisodesDetailsViewController" customModule="swift_exercise1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="68P-3X-Yl3">
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="723"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LUi-pP-JMM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cYe-4l-arW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSD-yy-Jmw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768" y="2618"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
