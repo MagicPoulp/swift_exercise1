@@ -31,6 +31,10 @@ class PodcastsTableViewController: UITableViewController {
         tableViewInstance.tableFooterView = UIView(frame: .zero)
         getData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
     //MARK: Data management
     // we could use a library (like Refit, or RetrofireSwift), but it is also a security concern to trust the library
@@ -98,17 +102,14 @@ class PodcastsTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.destination is UINavigationController
+        if segue.destination is PodcastsDetailsViewController
         {
             //https://stackoverflow.com/questions/25369412/swift-pass-data-through-navigation-controller
-            let vc = segue.destination as? UINavigationController
+            let vc = segue.destination as? PodcastsDetailsViewController
             let cell = sender as! PodcastsTableViewCell
-            if let chidVC = vc?.topViewController as? PodcastsDetailsViewController {
-                chidVC.podcast = podcasts[cell.index]
-            }
+            vc?.podcast = podcasts[cell.index]
         }
     }
 }

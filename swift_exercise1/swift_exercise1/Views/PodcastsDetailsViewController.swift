@@ -25,12 +25,12 @@ class PodcastsDetailsViewController: UIViewController {
         self.detailsDescription.numberOfLines = 15
         let numberOfEpisodes: Int = podcast?.numberOfEpisodes ?? -1
         self.detailsNumberOfEpisodes.text = String(numberOfEpisodes) + " episodes"
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     // MARK: - Actions
 
-    @IBAction func podcastsDetailsBackButton(_ sender: Any) {
-        self.dismiss(animated: true)
-    }
 }

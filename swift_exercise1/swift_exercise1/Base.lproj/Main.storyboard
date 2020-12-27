@@ -24,7 +24,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4Y-Rq-k2P">
                                 <rect key="frame" x="10" y="80" width="394" height="723"/>
                                 <connections>
-                                    <segue destination="aKf-AF-JIF" kind="embed" id="UtN-yF-2hW"/>
+                                    <segue destination="SrO-WD-VPx" kind="embed" id="UtN-yF-2hW"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -152,7 +152,7 @@
                                     <outlet property="numberOfEpisodes" destination="t5h-x7-dAt" id="7YM-Mu-aa6"/>
                                     <outlet property="partOfTheDescription" destination="jWq-i0-7K0" id="O5N-8Y-ASb"/>
                                     <outlet property="title" destination="9Vb-Lb-4Pr" id="3ZF-15-JHD"/>
-                                    <segue destination="lFD-Lh-lcw" kind="show" id="QJT-ZW-Fg5"/>
+                                    <segue destination="P2R-02-mcX" kind="show" id="Ygp-WM-4cu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -161,6 +161,7 @@
                             <outlet property="delegate" destination="aKf-AF-JIF" id="vHY-II-gG9"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="kOq-MD-YDt"/>
                     <connections>
                         <outlet property="tableView" destination="Bzi-NS-8Mf" id="nAd-7n-37E"/>
                         <outlet property="tableViewInstance" destination="Bzi-NS-8Mf" id="NbO-ga-mnG"/>
@@ -168,18 +169,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WM0-y7-0RU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2367" y="98"/>
+            <point key="canvasLocation" x="3244.9275362318845" y="97.433035714285708"/>
         </scene>
         <!--PodcastsDetails-->
         <scene sceneID="87k-8F-SGN">
             <objects>
                 <viewController id="P2R-02-mcX" userLabel="PodcastsDetails" customClass="PodcastsDetailsViewController" customModule="swift_exercise1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GE7-A9-ATo">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="669"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="723"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="LEe-Da-DeN">
-                                <rect key="frame" x="40" y="96" width="314" height="141.5"/>
+                                <rect key="frame" x="40" y="128" width="314" height="141.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1b-T3-M2C">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
@@ -216,13 +217,7 @@
                         <viewLayoutGuide key="safeArea" id="y4Z-bE-fsQ"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="ju7-JI-OKr">
-                        <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="j9Z-cn-KbW">
-                            <connections>
-                                <action selector="podcastsDetailsBackButton:" destination="P2R-02-mcX" id="7Yw-HW-7zN"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="ju7-JI-OKr"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="detailsDescription" destination="A7l-QN-4qs" id="gpZ-1H-xWN"/>
@@ -232,26 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gad-xR-ZDp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3929" y="99"/>
-        </scene>
-        <!--Podcasts Navigation Controller-->
-        <scene sceneID="Yld-hd-RfD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lFD-Lh-lcw" userLabel="Podcasts Navigation Controller" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="pDC-xN-x0y"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="998-om-e3u">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="P2R-02-mcX" kind="relationship" relationship="rootViewController" id="D8F-1D-lGP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RH7-k9-pOQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3133" y="98"/>
+            <point key="canvasLocation" x="4807.2463768115949" y="98.4375"/>
         </scene>
         <!--Episodes-->
         <scene sceneID="0bw-gu-Xke">
@@ -271,10 +247,27 @@
             </objects>
             <point key="canvasLocation" x="1696" y="1388"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="t6P-9T-dj4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SrO-WD-VPx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dfn-mp-T8l">
+                        <rect key="frame" x="0.0" y="44" width="394" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aKf-AF-JIF" kind="relationship" relationship="rootViewController" id="9p8-KD-CLs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YP0-ym-wcT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2366.666666666667" y="97.433035714285708"/>
+        </scene>
     </scenes>
     <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="speaker.2" catalog="system" width="128" height="97"/>
         <image name="video" catalog="system" width="128" height="83"/>
