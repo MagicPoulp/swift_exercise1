@@ -1,0 +1,8 @@
+platform :ios, '10.0'
+
+workspace 'swift_exercises'
+
+target 'swift_exercise1' do
+  use_frameworks!
+  pod 'MaterialComponents/List'
+end

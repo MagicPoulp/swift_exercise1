@@ -1,5 +1,7 @@
 # Nice features
 
+We do not use the recent library SwiftUI because not all devices can run it.
+
 We use a Table View because it suits well the problem at hand.
 
 We use the Interface Builder and Auto Layout as much as possible.
@@ -21,13 +23,21 @@ Thierry Vilmart
 https://github.com/MagicPoulp/audio_analyzer
 https://github.com/MagicPoulp/display_vulkan_from_kotlin_or_swift
 
-# Introduction
+# How to run
 
-see the back_end folder and the readme to start the server
+See the back_end folder and the readme to start the server
 
-We do not use the recent library SwiftUI because not all devices can run it.
+You may need to install cocoapods with brew, and then run "pod install" in the shell where the file Podfile is located
 
 # Documentation
+
+## The assignment
+
+See the doc folder for the assignment.
+
+## Google Material Design for iOS
+
+https://material.io/components/lists/ios#using-lists
 
 ## View controllers
 
