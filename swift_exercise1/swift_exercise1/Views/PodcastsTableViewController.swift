@@ -105,9 +105,9 @@ class PodcastsTableViewController: UITableViewController {
         {
             //https://stackoverflow.com/questions/25369412/swift-pass-data-through-navigation-controller
             let vc = segue.destination as? UINavigationController
-            //let cell = sender as! PodcastsTableViewCell
+            let cell = sender as! PodcastsTableViewCell
             if let chidVC = vc?.topViewController as? PodcastsDetailsViewController {
-                chidVC.podcast = podcasts[0]
+                chidVC.podcast = podcasts[cell.index]
             }
         }
     }
