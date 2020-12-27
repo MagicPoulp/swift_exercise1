@@ -15,21 +15,24 @@ class EpisodesDetailsViewController: UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var duration: UILabel!
     @IBOutlet var date: UILabel!
+    @IBOutlet var episodesDetailsWrappingView: UIView!
     var episode: Episode? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = ConstantsEnum.lightgray900
+        episodesDetailsWrappingView.backgroundColor = ConstantsEnum.lightgray900
 
         titleLabel.text = episode?.title
         titleLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         podcastLabel.text = "Podcast: " + (episode?.podcast.title ?? "")
         descriptionLabel.text = episode?.description
-        descriptionLabel.numberOfLines = 1000
+        descriptionLabel.numberOfLines = 100
         duration.text = String(episode?.duration ?? 0) + " min"
         let dateArr = episode?.created.split(separator: "T")
         date.text = "Created: " + String(dateArr?[0] ?? "")
+        print("Created: " + String(dateArr?[0] ?? ""))
     }
     
     override func viewWillAppear(_ animated: Bool) {
