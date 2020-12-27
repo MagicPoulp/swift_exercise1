@@ -111,12 +111,6 @@ class EpisodesCollectionViewController: UICollectionViewController {
       let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
       return CGSize(width: itemSize, height: itemSize)
     }
-/*
-    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
-        let cellSize = CGSize(width: collectionView.bounds.width, height: 400)
-        return cellSize
-    }*/
 }
 
 extension EpisodesCollectionViewController: PinterestLayoutDelegate {

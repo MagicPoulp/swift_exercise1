@@ -10,6 +10,7 @@ import UIKit
 
 class EpisodesDetailsViewController: UIViewController {
 
+    //MARK: Properties
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var podcastLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
@@ -38,7 +39,4 @@ class EpisodesDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
-
-    // MARK: - Actions
-
 }

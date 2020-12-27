@@ -1,16 +1,36 @@
-# Nice features
+# Summary
+
+## Nice features
 
 We do not use the recent library SwiftUI because not all devices can run it.
-
-We use a Table View because it suits well the problem at hand. We also use a  Material Design List based on a UICollectionViewController and using a Podfile.
 
 We use the Interface Builder and Auto Layout as much as possible.
 
 We use a global tab navigation controller. And in the podcasts page, we have a container that embedds a table view controller.
 
-We use a popup for the details page because it can take the whole screen. And we have a custom back button to dismiss the popup.
+We use 3 types of lists: UITableVIew, UICollectionView, and UIScrollView.
+We use a Table View because it suits well teh problem of a repeated pattern.
+We also use a  Material Design List based on a UICollectionViewController and using a Podfile. We use a custom layout class.
+We use a ScrollView for non repeated content for the episodes landing page. We use the layout guides on the ScrollView.
+
+We hide the navigation bar at the top, except for the langing pages.
 
 We customized thoroughly the table view, with extra colors, and using StackView.
+
+On a separate branch UIScrollView-bad-solution, we could make a complete view dynamicall without using Auto Layout.
+We could add content for arepeated pattern dynamically in a UIScrollView using dynamic layout, dynamic height calculations,
+and dynamic constraints from Swift. It is an alternative way more time consuming than using the Interactive Builder in XCode.
+
+## Things remaining to do
+
+Add a filter on the podcast when showing episodes. The Material Design Chip component looks seems well suited.
+
+Add Material Design themes and improve the whole design with images and colors.
+
+Change the pods to static libraries (remove use_frameworks), and fix the Framework Search Paths.
+(not straightforward, and buggy on my old XCode version that I am forbidden to update since it is locked on an AppleID)
+
+Add a nice image and info on how to use the app on the first page. And links to the company website.
 
 # Licenses
 
@@ -20,6 +40,7 @@ See the licenses folder for all the various licenses used.
 
 Thierry Vilmart
 2020
+Here are 2 of my mobile development projects in Flutter and Kotlin:
 https://github.com/MagicPoulp/audio_analyzer
 https://github.com/MagicPoulp/display_vulkan_from_kotlin_or_swift
 
@@ -33,7 +54,9 @@ You may need to install cocoapods with brew, and then run "pod install" in the s
 
 ## The assignment
 
-See the doc folder for the assignment.
+The goal was to use Swift and UIKit to show 2 lists with JSON data from HTTP requests.
+More info here:
+https://github.com/lvlsgroup/afripods-light-test
 
 ## Google Material Design for iOS
 
