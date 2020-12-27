@@ -3,6 +3,9 @@ platform :ios, '10.0'
 workspace 'swift_exercises'
 
 target 'swift_exercise1' do
+  # we shluld remove the line use_frameworks to build static libraries
+  # but it requires extra work to fix the "Framework Search Path"
+  # it seems hard to do in my old version of XCode.
   use_frameworks!
   pod 'MaterialComponents/List'
 end

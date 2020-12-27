@@ -23,6 +23,7 @@ class PodcastsTableViewController: UITableViewController {
     @IBOutlet var tableViewInstance: UITableView!
     var podcastsURL: String = "http://localhost:4200/podcasts.json"
     var podcasts: Array<Podcast> = Array<Podcast>()
+    let httpManager: HttpManager = HttpManager()
 
     //MARK: Initialization
     override func viewDidLoad() {
@@ -37,37 +38,13 @@ class PodcastsTableViewController: UITableViewController {
     }
 
     //MARK: Data management
-    // we could use a library (like Refit, or RetrofireSwift), but it is also a security concern to trust the library
-    // and I do not have time to check the libraries
-    // we also need a better way to react to errors and display errors
-    // maybe this could be moved to a delegate
-    // https://cocoacasts.com/fm-3-download-an-image-from-a-url-in-swift
     func getData() {
-        // Create URL
-        // here is how to make it work on HTTPS with more work:
-        // https://jaanus.com/ios-13-certificates/
-        let url = URL(string: self.podcastsURL)!
-
-        // a new thread prevent blocking the main thread
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
-                // as said in the tutorial UI updates must be run on the main thread
-                DispatchQueue.main.async {
-                    // decoding taken from here:
-                    // https://programmingwithswift.com/parse-json-from-file-and-url-with-swift/
-                    // use URLSession like in the link above to catch preoperly http errors
-                    //let dataJson = data.data(using: .utf8)!
-                    let dataJson = data
-                    let podcasts: Array<Podcast> = try! JSONDecoder().decode([Podcast].self, from: dataJson)
-                    self.podcasts = podcasts
-                    self.tableViewInstance.reloadData()
-                }
-            }
+        let callback: (Data) -> Void = { data in
+            let podcasts: Array<Podcast> = try! JSONDecoder().decode([Podcast].self, from: data)
+            self.podcasts = podcasts
+            self.tableViewInstance.reloadData()
         }
-    }
-
-    func addPodcasts(podcasts: Array<Podcast>) {
-        //tableView.dataSource = podcasts!
+        httpManager.get(url: self.podcastsURL, callback: callback)
     }
 
     // Definition of the cell
@@ -91,9 +68,7 @@ class PodcastsTableViewController: UITableViewController {
         let backgroundView = UIView()
         backgroundView.backgroundColor = ConstantsEnum.teal1
         cell.selectedBackgroundView = backgroundView
-        //cell.selectedBackgroundView?.backgroundColor = .green
-        //cell.selectedBackgroundView?.tintColor = .green
-        return cell;
+        return cell
     }
     
     // Define the number of rows in your tableView

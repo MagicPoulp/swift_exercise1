@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E412AA8B25973382003AC949 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E412AA8A25973382003AC949 /* README.md */; };
+		E424E1B62598BC7500F84D79 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424E1B52598BC7500F84D79 /* HttpManager.swift */; };
 		E4AADC34259750AB007859F3 /* PodcastsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AADC33259750AB007859F3 /* PodcastsTableViewController.swift */; };
 		E4ADA260259884DA00D47C58 /* EpisodesMaterialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ADA25F259884DA00D47C58 /* EpisodesMaterialListViewController.swift */; };
 		E4E8080925946CBD00FB93AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E8080825946CBD00FB93AB /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 		6F16DDA5B8A238E3E5943055 /* Pods_swift_exercise1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_exercise1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D902971981154C34CA8510F8 /* Pods-swift_exercise1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift_exercise1.release.xcconfig"; path = "Target Support Files/Pods-swift_exercise1/Pods-swift_exercise1.release.xcconfig"; sourceTree = "<group>"; };
 		E412AA8A25973382003AC949 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E424E1B52598BC7500F84D79 /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		E4AADC33259750AB007859F3 /* PodcastsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastsTableViewController.swift; sourceTree = "<group>"; };
 		E4ADA25F259884DA00D47C58 /* EpisodesMaterialListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodesMaterialListViewController.swift; sourceTree = "<group>"; };
 		E4E8080525946CBD00FB93AB /* swift_exercise1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_exercise1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 			children = (
 				E4ECE37025977E36004DB336 /* SimpleExtensions.swift */,
 				E4ECE37425979F5F004DB336 /* Constants.swift */,
+				E424E1B52598BC7500F84D79 /* HttpManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				E4ADA260259884DA00D47C58 /* EpisodesMaterialListViewController.swift in Sources */,
 				E4ECE3732597961A004DB336 /* PodcastsDetailsViewController.swift in Sources */,
 				E4ECE37525979F5F004DB336 /* Constants.swift in Sources */,
+				E424E1B62598BC7500F84D79 /* HttpManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
