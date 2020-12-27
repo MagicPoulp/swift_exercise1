@@ -26,7 +26,7 @@ class EpisodesDetailsViewController: UIViewController {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         podcastLabel.text = "Podcast: " + (episode?.podcast.title ?? "")
         descriptionLabel.text = episode?.description
-        descriptionLabel.numberOfLines = 15
+        descriptionLabel.numberOfLines = 1000
         duration.text = String(episode?.duration ?? 0) + " min"
         let dateArr = episode?.created.split(separator: "T")
         date.text = "Created: " + String(dateArr?[0] ?? "")
